@@ -1,0 +1,58 @@
+{
+    "data": [
+        {
+         "id": "1", 
+         "name": "Classic Muzzarella", 
+         "image": "classic.png", 
+         "price":"$8"
+        },
+        {
+          "id": "2",
+          "name": "Crispy Bacon", 
+          "image": "bacon.png", 
+          "price":"$9"
+        },
+        {
+          "id": "3",
+          "name": "Baked Rolls x 8", 
+          "image": "roll.png", 
+          "price":"$10"
+        },
+        {
+          "id": "4",
+          "name": "Garlic Mix", 
+          "image": "garlicmix.png", 
+          "price":"$9"   
+        },
+        {
+          "id": "5",
+          "name": "Margarita", 
+          "image": "margarita.png", 
+          "price":"$9"
+        },
+        {
+          "id": "6",
+          "name": "Veggie", 
+          "image": "veggie.png", 
+          "price":"$8"
+        },
+        {
+          "id": "7",
+          "name": "Super Pepperoni", 
+          "image": "extrapeperoni.png", 
+          "price":"$10"
+        },
+        {
+          "id": "8",
+          "name": "Evergreen Cream", 
+          "image": "evergreen.png", 
+          "price":"$9"
+        },
+        {
+          "id": "9",
+          "name": "Muzzarella BBQ", 
+          "image": "bbqcheese.png", 
+          "price":"$9"
+        }
+    ]    
+}

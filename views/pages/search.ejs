@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('../partials/head'); %>
+<style>    
+    * {
+        box-sizing: border-box;
+      }
+      
+      form.example input[type=text] {
+        padding: 10px;
+        font-size: 17px;
+        border: 1px solid grey;
+        float: left;
+        width: 80%;
+        background: #f1f1f1;
+      }
+      
+      form.example button {
+        float: left;
+        width: 20%;
+        padding: 10px;
+        background: #ac0813;
+        color: white;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-left: none;
+        cursor: pointer;
+      }
+      
+      form.example button:hover {
+        background: #a4040e;
+      }
+      
+      form.example::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      .result-container {
+        font-family: arial;
+        font-size: 24px;
+        margin: auto;
+        width: 350px;
+        height: 200px;
+
+      }
+
+      p {
+        text-align: center;
+      }
+</style>
+</head>
+<body>
+    <%- include('../partials/navbar'); %>
+
+    <div class="row">
+        <div class="col-75">
+          <div class="container">
+            <br><br><br><br>
+            <form class="example" action="/search-engine" method="post"  style="margin:auto;max-width:300px">
+                <input type="text" placeholder="Search.." name="searchWord">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <div class="result-container">
+              <p type="text" id="result"></p>
+            </div>
+            <br><br><br><br>
+          </div>
+        </div>
+    </div>
+<script>
+$(document).ready(function(){
+    var $form = $('form');
+    $form.submit(function(){
+        $.post($(this).attr('action'), $(this).serialize(), 
+        
+        function(response){
+            if(response.status=="success") {
+              const textnode = document.createTextNode(response.responseText);
+              const node = document.createElement("li");
+              node.appendChild(node)
+              
+              document.getElementById("result").appendChild(node);
+            }
+        },'json')
+        .fail(function(error) { 
+            document.getElementById("result").innerText = ""
+            document.getElementById("result").innerText = error.responseText
+        });
+      
+      return false
+    });
+});    
+
+$(document)
+.ajaxStart(function(){
+    document.getElementById("result").innerText = "searching..."
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "take-home-app",
+  "version": "1.0.0",
+  "description": "Set of views in order to evaluate automation skills.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "",
+    "ejs": "",
+    "cookie-parser": ""
+  },
+  "scripts": {
+    "start": "node server"
+  },
+  "author": "Gonzalo Graf"
+}

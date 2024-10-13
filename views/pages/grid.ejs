@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+    <%- include('../partials/navbar'); %>
+    <div class="row">
+        <div class="col-75">
+          <div class="container">
+            <div id="menu" class="grid-container">
+                <% inventory.forEach(function(item) { %>
+                    <div class="item">
+                        <label data-test-id="card-number"><%=item.id%></label>
+                        <img src="images/<%=item.image%>">
+                        <h4 data-test-id="item-name"><b><%=item.name%></b></h4> 
+                        <p id="item-price"><%=item.price%></p>
+                        <button data-test-id="add-to-order" class="btn">
+                            Add to Order
+                        </button>
+                    </div>    
+                <% }); %>
+            </div>
+          </div>
+        </div>
+    </div>    
+</body>
+</html>
