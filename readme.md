@@ -6,4 +6,7 @@
 
 - Start with npm start
 
+- username: johndoe19
+  password: supersecret
+  
 - Contact: grafgonzalo@gmail.com
