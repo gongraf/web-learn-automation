@@ -10,3 +10,5 @@
   password: supersecret
   
 - Contact: grafgonzalo@gmail.com
+  
+https://github.com/gongraf/automation-app/blob/main/app-capture.png?raw=true![image](https://github.com/user-attachments/assets/d4114cfe-fabb-44b0-8817-d011ec8efac7)
