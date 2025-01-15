@@ -130,6 +130,36 @@ app.get("/search", (req,res)=>{
         .render("pages/search")
 })
 
+/**
+ * Dummy api/ routes to test backend automation frameworks
+ */
+app.get("/api",(req,res)=>{
+    return res.send("up")
+})
+
+app.get("/api/inventory",(req,res)=>{
+    return res.status(200).json(inventory.getMenuApi())
+})
+
+app.get("/api/inventory/filter",(req,res)=>{
+    if(req.query.id==null) {
+        return res.status(400).send("Not all requirements are met")
+    }
+    let item = inventory.filterItem(req.query.id)
+    if(item==undefined){
+        return res.sendStatus(404)
+    }
+    return res.json(item)
+})
+
+app.post("/api/inventory/add",(req,res)=>{
+    if(req.body.id==null||req.body.name==null||req.body.price==null||req.body.image==null){
+        return res.status(400).send("Not all requirements are met")
+    }
+
+    return res.sendStatus(inventory.addItem(req.body))
+})
+
 app.use(function(req, res) { res.sendStatus(400) })
 
 app.use(function(req, res) { res.sendStatus(500) })
