@@ -82,8 +82,7 @@ app.get("/checkout",(req,res)=>{
         .status(200)
         .render("pages/form",{
             redirect: "/order",
-            sameaddchecked: Math.random()*10>5?"checked":"",
-            products: cart.getRandomCart()
+            sameaddchecked: Math.random()*10>5?"checked":""
         })
 })
 
